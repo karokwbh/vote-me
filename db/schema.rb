@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_23_150731) do
+ActiveRecord::Schema.define(version: 2023_03_25_141459) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "name"
@@ -22,4 +22,13 @@ ActiveRecord::Schema.define(version: 2023_03_23_150731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "vote_logs", force: :cascade do |t|
+    t.integer "candidate_id", null: false
+    t.string "ip_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["candidate_id"], name: "index_vote_logs_on_candidate_id"
+  end
+
+  add_foreign_key "vote_logs", "candidates"
 end
