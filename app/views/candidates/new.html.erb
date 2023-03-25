@@ -1,8 +1,10 @@
 <h1>Add Candidate</h1>
 
 <%= form_for(@candidate) do |form| %>
-<%= form.label :name %>
-<%= form.text_field :name %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
 <%= form.label :party %>
 <%= form.text_field :party %>
 <%= form.label :age %>
