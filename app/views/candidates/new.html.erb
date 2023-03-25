@@ -1,6 +1,6 @@
 <h1>Add Candidate</h1>
 
-<%= form_for Candidate.new do |form| %>
+<%= form_for(@candidate) do |form| %>
 <%= form.label :name %>
 <%= form.text_field :name %>
 <%= form.label :party %>
